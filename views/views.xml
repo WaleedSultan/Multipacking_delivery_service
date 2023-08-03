@@ -1,0 +1,31 @@
+<odoo>
+    <data>
+        <record id="view_picking_internal_search_inherit_stock_picking_batch" model="ir.ui.view">
+            <field name="name">stock.picking.form</field>
+            <field name="model">stock.picking</field>
+            <field name="inherit_id" ref="stock.view_picking_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='origin']" position="after">
+                    <field name="single_pack"/>
+                    <field name="multipack"/>
+
+                </xpath>
+            </field>
+        </record>
+
+
+<!--        <record id="added_multipack_view_formttt" model="ir.ui.view">-->
+<!--            <field name="name">choose.delivery.package.form.inherit</field>-->
+<!--            <field name="model">choose.delivery.package</field>-->
+<!--            <field name="inherit_id" ref="delivery.choose_delivery_package_view_form"/>-->
+<!--            <field name="arch" type="xml">-->
+<!--                <xpath expr="//field[@name='height']" position="after">-->
+<!--                    <group>-->
+<!--                        <field name='product_id'-->
+<!--                               invisible="context.get('current_package_carrier_type') in ['fixed', 'base_on_rule','none']"/>-->
+<!--                    </group>-->
+<!--                </xpath>-->
+<!--            </field>-->
+<!--        </record>-->
+    </data>
+</odoo>
